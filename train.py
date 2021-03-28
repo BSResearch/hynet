@@ -116,7 +116,7 @@ if __name__ == '__main__':
                     soft_labels = test_graph.ndata['edge_soft_label']['edge'].to(device)
                     # note the accuracy based on the soft segmentation labels is based on the number of correct labels
                     # as oppose to the the soft accuracy reported in the paper which consider the edge length
-                    correct_test_edge, total_test_edge = soft_accuracy_count(test_prediction['edge'], soft_labels, device)
+                    correct_test_edge, total_test_edge = soft_accuracy_count(test_pred_class['edge'], soft_labels, device)
                     test_soft_corrects_total += correct_test_edge
                     test_sample_total_edge += total_test_edge
 
