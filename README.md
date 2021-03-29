@@ -18,7 +18,7 @@ Run the related bash script from ./scripts for the following tasks. Example:
 - Run test and save predicted segmentation
 - Run test on test dataset and get accuracy
 - Visualize segmentation results
-- Get pretrained model run the related bash script in ./scripts .
+- Get pretrained model
 
 ## Results
 ![RESULTS](https://user-images.githubusercontent.com/81344957/112779505-de677580-9014-11eb-922a-d3c50cc397dd.jpg)
