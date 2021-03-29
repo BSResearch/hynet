@@ -5,8 +5,9 @@ HyNet is a novel representation learning framework that encodes mesh elements by
 
 
 ## Installation
--Clone this repository.
--Install dependencies using environment.yml .
+
+1. Clone this repository.
+2. Install dependencies using environment.yml .
 
 ## 3D Shape Segmentation
 Run the related bash script from ./scripts for the following tasks. Example: 
