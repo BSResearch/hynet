@@ -5,18 +5,21 @@ import torch
 import argparse
 import os
 from util.util import mkdir
+from pathlib import Path
 
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
 
     parser = argparse.ArgumentParser(description='view segmented mesh with predicted or ground truth edge labels.')
-    parser.add_argument('--input_graph_name', type=str, help='Enter the input graph name')
-    parser.add_argument('--input_folder', type=str, help='Enter the input graph folder path')
-    parser.add_argument('--mode', choices={"prediction", "gt"}, default="prediction")
-    parser.add_argument('--screenshot_folder_to_save', type=str, help='Path for saving screenshot')
+    parser.add_argument('--input_graph_name', type = str, help='Enter the input graph name')
+    parser.add_argument('--input_folder', type = str, help='Enter the input graph folder path')
+    parser.add_argument('--mode', type = str, choices={"prediction", "gt"}, default="prediction")
+    parser.add_argument('--screenshot_folder_to_save', type = str, help='Path for saving screenshot')
 
     args = parser.parse_args()
-    mkdir(args.screenshot_folder_to_save)
+    print(args.input_graph_name)
+
+    mkdir(Path(args.screenshot_folder_to_save))
     graph_path = os.path.join(args.input_folder, args.input_graph_name)
     # Load input graph and edges
     graph, label = dgl.load_graphs(graph_path)
