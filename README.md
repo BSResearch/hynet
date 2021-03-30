@@ -13,8 +13,7 @@ HyNet is a novel representation learning framework that encodes mesh elements by
 ## 3D Shape Segmentation
 Run the related bash script from ./scripts for the following tasks. Example: 
 - Download the dataset using following link:
--
-  https://figshare.com/s/0587ec730eac72b41aa7
+https://figshare.com/s/0587ec730eac72b41aa7
 - Convert mesh files to hybrid graph
 - To train a HyNet model,
 - Run test and save predicted segmentation
