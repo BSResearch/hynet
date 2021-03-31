@@ -65,7 +65,7 @@ def generate_augmented_graph_from_single_mesh(mesh_files_dict, graph_dir, preven
         augmented_mesh = scale_verts(input_mesh, mean, var, coef)
         filename_to_save = os.path.join(graph_dir, mesh_files_dict['mesh'].split('/')[-1].split('.')[0] + '_'
                                         + str(i + 1) + '_jittered_nef_graph.bin')
-        graph_constructor = GraphConstructor.GraphConstructor(input_mesh=augmented_mesh, mesh_name=mesh_name,
+        graph_constructor = GraphConstructor(input_mesh=augmented_mesh, mesh_name=mesh_name,
                                                               data_edges=mesh_edges,
                                                               edge_area=edge_areas,
                                                               edges_seg_labels=edges_seg_labels,
@@ -83,7 +83,7 @@ def generate_augmented_graph_from_single_mesh(mesh_files_dict, graph_dir, preven
         filename_to_save = os.path.join(graph_dir,
                                         mesh_files_dict['mesh'].split('/')[-1].split('.')[0] + '_y_rotation_' +
                                         str(y_theta_deg) + '_nef_graph.bin')
-        graph_constructor = GraphConstructor.GraphConstructor(input_mesh=rotated_mesh_y, mesh_name=mesh_name,
+        graph_constructor = GraphConstructor(input_mesh=rotated_mesh_y, mesh_name=mesh_name,
                                                               data_edges=mesh_edges,
                                                               edge_area=edge_areas,
                                                               edges_seg_labels=edges_seg_labels,
@@ -100,7 +100,7 @@ def generate_augmented_graph_from_single_mesh(mesh_files_dict, graph_dir, preven
                 filename_to_save = os.path.join(graph_dir,
                                                 mesh_files_dict['mesh'].split('/')[-1].split('.')[0] + '_y_rotation_' +
                                                 str(y_theta_deg) + '_slided_nef_graph.bin')
-                graph_constructor = GraphConstructor.GraphConstructor(input_mesh=slided_mesh, mesh_name=mesh_name,
+                graph_constructor = GraphConstructor(input_mesh=slided_mesh, mesh_name=mesh_name,
                                                                       data_edges=mesh_edges,
                                                                       edge_area=edge_areas,
                                                                       edges_seg_labels=edges_seg_labels,
@@ -116,7 +116,7 @@ def generate_augmented_graph_from_single_mesh(mesh_files_dict, graph_dir, preven
             filename_to_save = os.path.join(graph_dir,
                                             mesh_files_dict['mesh'].split('/')[-1].split('.')[0] + '_y_rotation_' +
                                             str(y_theta_deg) + '_jittered_nef_graph.bin')
-            graph_constructor = GraphConstructor.GraphConstructor(input_mesh=rotated_mesh_y_jittered,
+            graph_constructor = GraphConstructor(input_mesh=rotated_mesh_y_jittered,
                                                                   mesh_name=mesh_name,
                                                                   data_edges=mesh_edges,
                                                                   edge_area=edge_areas,
@@ -136,7 +136,7 @@ def generate_augmented_graph_from_single_mesh(mesh_files_dict, graph_dir, preven
                                               '_y_rotation_' + str(y_theta_deg) + '_x_rotation_' + str(x_theta_deg) +
                                               '_nef_graph.bin')
 
-            graph_constructor = GraphConstructor.GraphConstructor(input_mesh=rotated_mesh_y_x_90, mesh_name=mesh_name,
+            graph_constructor = GraphConstructor(input_mesh=rotated_mesh_y_x_90, mesh_name=mesh_name,
                                                                   data_edges=mesh_edges,
                                                                   edge_area=edge_areas,
                                                                   edges_seg_labels=edges_seg_labels,
@@ -194,10 +194,10 @@ if __name__ == '__main__':
                                                               prevent_nonmanifold_edges=True,
                                                               num_of_slide_aug_for_each_sample=1,
                                                               num_of_jitter_aug_for_each_sample=1,
-                                                              jitter_rotation=True, mean=0, var=0.002,
-                                                              coef=1,
+                                                              jitter_rotation=True, mean=converter.jitter_mean,
+                                                              var=converter.jitter_var, coef=1,
                                                               num_y_rotation=24, rotate_x_90_for_each_y=True,
-                                                              slide_vert_percentage=0.2)
+                                                              slide_vert_percentage=converter.slide_vert_percentage)
 
     if converter.portion == 'test':
         for root, _, file_names in os.walk(test_dir):
