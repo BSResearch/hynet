@@ -17,7 +17,9 @@ Run the related bash script from ./scripts for the following tasks. For segmenta
 https://figshare.com/s/0587ec730eac72b41aa7
 
 - Convert mesh files to hybrid graph
-
+```
+./scripts/human_seg/generate_hybrid_graph.sh
+```
 - To train a HyNet model,
 ```
 ./scripts/human_seg/train.sh
