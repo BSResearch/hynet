@@ -1,10 +1,10 @@
 import pymesh
 from util.meshes import preprocess_mesh
-from .graph_constructor import GraphConstructor
+from mesh2hybrid.graph_constructor import GraphConstructor
 import warnings
 from util.augmentation import scale_verts, rotateY3D, rotateX3D, slide_verts
 from util.util import is_mesh_file, mkdir
-from .mesh2hybrid_parser import Mesh2HybridParser
+from mesh2hybrid.mesh2hybrid_parser import Mesh2HybridParser
 import os
 import numpy as np
 

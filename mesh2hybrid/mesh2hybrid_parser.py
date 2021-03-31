@@ -18,3 +18,4 @@ class Mesh2HybridParser:
     def parse(self):
         self.initialize()
         self.opt, unknown = self.parser.parse_known_args()
+        return self.opt
