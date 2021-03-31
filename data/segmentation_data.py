@@ -38,7 +38,7 @@ class SegmentationData(BaseDataset):
                           {'geometric_feat': (nodes.data['geometric_feat'] - self.mean_face_feat)/self.std_face_feat},
                           ntype='face')
         label = graph.ndata['label']
-        if self.opt.save_segmentation_for_test_files:
+        if self.opt.save_prediction_for_test_files:
             return path, graph, label
         return graph, label
 

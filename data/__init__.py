@@ -18,7 +18,7 @@ class DataLoader:
     def __init__(self, opt):
         self.opt = opt
         self.dataset = create_dataset(opt)
-        if not opt.save_segmentation_for_test_files:
+        if not opt.save_prediction_for_test_files:
             self.dataloader = torch.utils.data.DataLoader(
                 self.dataset,
                 batch_size=opt.batch_size,

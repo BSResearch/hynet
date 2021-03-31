@@ -47,8 +47,9 @@ class BaseOptions:
         self.parser.add_argument('--serial_batches', action='store_true',
                                  help='if true, takes meshes in order, otherwise takes them randomly')
         self.parser.add_argument('--seed', type=int, help='if specified, uses seed')
-        self.parser.add_argument('--save_segmentation_for_test_files', type=bool, default=False, help='True if segmentation result '
-                                                                                       'is required')
+        self.parser.add_argument('--save_prediction_for_test_files', default=False, help='True if segmentation result '
+                                                                                         'is required')
+
         self.initialized = True
 
     def parse(self):

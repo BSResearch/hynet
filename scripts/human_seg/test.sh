@@ -7,10 +7,10 @@
 # and saves the segmented test data in this folder
 # model_file: path to saved model for testing the test dataset
 # save_prediction_for_test_files: If True the segmentation result of test data will be saved in result_dir
-python ../../test.py \
---dataroot ../../datasets/human_seg/augmented_hybrid_graphs \
---batch_size 28 \
---results_dir ../../datasets/human_seg/test_results \
---model_file ../../checkpoints/human_seg_0/10_net.pth \
+python test.py \
+--dataroot ./datasets/human_seg/augmented_hybrid_graphs \
+--batch_size 16 \
+--results_dir ./datasets/human_seg/test_results \
+--model_file ./checkpoints/human_seg_0/4_net.pth \
 --classification_element edge \
 --save_prediction_for_test_files True

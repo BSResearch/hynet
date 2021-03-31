@@ -7,6 +7,7 @@ from util.accuracy_calculation import soft_accuracy_meshCNN, soft_accuracy_count
 import os
 import dgl
 
+
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
     opt = TestOptions().parse()
