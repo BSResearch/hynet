@@ -39,7 +39,7 @@ class BaseOptions:
         self.parser.add_argument('--classification_element', type=str,
                                  help='select the type classification: node, edge, face')
         # general params
-        self.parser.add_argument('--num_threads', default=0, type=int, help='# threads for loading data')
+        self.parser.add_argument('--num_threads', default=8, type=int, help='# threads for loading data')
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.parser.add_argument('--name', type=str, default='debug',
                                  help='name of the experiment.')
