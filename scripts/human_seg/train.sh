@@ -6,9 +6,9 @@
 #lr: learning rate
 #name: A folder with this name will be added to ./checkpoints folder. The trained model will
 # be saved in this folder
-python ../../train.py \
+python train.py \
 --dataroot ../../datasets/human_seg/augmented_hybrid_graphs \
 --lr 0.003 \
 --batch_size 16 \
---name human_seg_0 \
+--name human_seg_test \
 --classification_element edge\
