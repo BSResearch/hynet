@@ -32,7 +32,6 @@ https://figshare.com/s/0587ec730eac72b41aa7
 ```
 ./scripts/human_seg/mesh_viewer.sh
 ```
-- Get pretrained model
 
 ## Results
 ![RESULTS](https://user-images.githubusercontent.com/81344957/112779505-de677580-9014-11eb-922a-d3c50cc397dd.jpg)
